@@ -62,7 +62,7 @@ namespace Loggerdinates.API.IdentityServer
                     PostLogoutRedirectUris = { "https://localhost:44300/signout-callback-oidc" },
 
                     AllowOfflineAccess = true,
-                    AllowedScopes = { "openid", "profile", "scope2" , IdentityServerConstants.LocalApi.ScopeName ,"api1.read","api1.write","api1.update"}
+                    AllowedScopes = { "openid", "profile",IdentityServerConstants.LocalApi.ScopeName ,"api1.read","api1.write","api1.update"}
                 },
             };
     }
