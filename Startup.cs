@@ -29,6 +29,7 @@ namespace Loggerdinates.API.IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddLocalApiAuthentication();
             services.AddControllersWithViews();
 
@@ -80,7 +81,10 @@ namespace Loggerdinates.API.IdentityServer
             }
 
             app.UseStaticFiles();
-
+            app.UseCors(x => x
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader());
             app.UseRouting();
             app.UseIdentityServer();
             app.UseAuthorization();

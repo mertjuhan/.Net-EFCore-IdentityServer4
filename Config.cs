@@ -64,6 +64,18 @@ namespace Loggerdinates.API.IdentityServer
                     AllowOfflineAccess = true,
                     AllowedScopes = { "openid", "profile",IdentityServerConstants.LocalApi.ScopeName ,"api1.read","api1.write","api1.update"}
                 },
-            };
+                new Client
+            {
+                ClientId = "angular-client",
+                ClientName = "Angular Client",
+                AllowedGrantTypes = GrantTypes.Code,
+                RequirePkce = true,
+                RequireClientSecret = false,
+                RedirectUris = { "http://localhost:4200" },
+                PostLogoutRedirectUris = { "http://localhost:4200/" },
+                AllowedCorsOrigins = { "http://localhost:4200" },
+                AllowedScopes = { "openid", "profile",IdentityServerConstants.LocalApi.ScopeName ,"api1.read","api1.write","api1.update"}
+            }
+    };
     }
 }
